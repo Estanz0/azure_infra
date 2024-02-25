@@ -1,4 +1,3 @@
-plan.local.sh
-AZURE_CREDENTIALS*
+AZURE_CREDENTIALS.json
 .terraform*
 .DS_Store
