@@ -27,3 +27,15 @@ resource "azurerm_service_plan" "default" {
   os_type  = var.asp_os_type
   sku_name = var.asp_sku_name
 }
+
+# Github
+data "github_repository" "repo" {
+  full_name = "${var.gh_repo_owner}/${var.gh_repo_name}"
+}
+
+resource "github_actions_environment_variable" "action_variable_fa_name" {
+  repository    = data.github_repository.repo.name
+  environment   = var.env
+  variable_name = "APP_SERVICE_PLAN_NAME"
+  value         = azurerm_service_plan.default.name
+}

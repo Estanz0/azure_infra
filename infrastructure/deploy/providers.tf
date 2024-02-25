@@ -4,7 +4,16 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "=3.0.0"
     }
+
+    github = {
+      source  = "integrations/github"
+      version = "5.42.0"
+    }
   }
+}
+
+provider "github" {
+  owner = var.gh_repo_owner
 }
 
 provider "azurerm" {

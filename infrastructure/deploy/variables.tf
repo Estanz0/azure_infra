@@ -36,3 +36,12 @@ variable "asp_os_type" {
 variable "asp_sku_name" {
   type = string
 }
+
+# Github
+variable "gh_repo_owner" {
+  type = string
+}
+
+variable "gh_repo_name" {
+  type = string
+}
