@@ -1,3 +1,2 @@
-AZURE_CREDENTIALS.json
-.terraform*
 .DS_Store
+.vscode*

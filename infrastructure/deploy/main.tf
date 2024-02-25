@@ -33,9 +33,16 @@ data "github_repository" "repo" {
   full_name = "${var.gh_repo_owner}/${var.gh_repo_name}"
 }
 
-resource "github_actions_environment_variable" "action_variable_fa_name" {
+resource "github_actions_environment_variable" "app_service_plan_name" {
   repository    = data.github_repository.repo.name
   environment   = var.env
   variable_name = "APP_SERVICE_PLAN_NAME"
   value         = azurerm_service_plan.default.name
+}
+
+resource "github_actions_environment_variable" "resource_group_name" {
+  repository    = data.github_repository.repo.name
+  environment   = var.env
+  variable_name = "RESOURCE_GROUP_NAME"
+  value         = azurerm_resource_group.default.name
 }
