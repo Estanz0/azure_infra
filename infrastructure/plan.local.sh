@@ -15,4 +15,4 @@ az account set -s $ARM_SUBSCRIPTION_ID
 terraform -chdir=deploy init 
 terraform -chdir=deploy fmt 
 terraform -chdir=deploy workspace select -or-create=true $env$project
-terraform -chdir=deploy plan  -input=false -var-file $env.tfvars -var env=$env -var project_id=$project -var client_id=$ARM_CLIENT_ID -var client_secret=$ARM_CLIENT_SECRET -var subscription_id=$ARM_SUBSCRIPTION_ID -var tenant_id=$ARM_TENANT_ID
+terraform -chdir=deploy plan  -input=false -var-file $env.tfvars -var env=$env -var project_id=$project -var gh_repo_owner=$GH_REPO_OWNER -var gh_repo_name=$GH_REPO_NAME -var client_id=$ARM_CLIENT_ID -var client_secret=$ARM_CLIENT_SECRET -var subscription_id=$ARM_SUBSCRIPTION_ID -var tenant_id=$ARM_TENANT_ID
